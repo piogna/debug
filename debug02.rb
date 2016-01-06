@@ -1,4 +1,4 @@
-def average(numbers)
+def average(numbers = nil)
   return nil if numbers.nil? || numbers.length == 0
   sum = 0
   nils = 0
@@ -7,7 +7,7 @@ def average(numbers)
       nils += 1
       next
     end
-    sum += num
+    sum += num.to_i
   end
   sum / (numbers.size - nils)
 end
@@ -24,13 +24,13 @@ test_average([4,5,6]) # => 5
 test_average([15,5,10]) # => 10
 
 # Should treat string like number
-test_average([15,5,10]) # => 10
+test_average([15,'5',10]) # => 10
 
 # Should show decimal value
 test_average([10, 5]) # => 7.5 instead of just 7
 
 # Watch out! Even tests can have bugs!
-test_average([9, 5, 7])
+test_average([9, '5', 7])
 
 # Empty set should return nil, not throw an error
 test_average([]) # => nil
