@@ -6,10 +6,14 @@ def sum(list)
   total
 end
 
-list1 = [16,21,31,42,55]
+def sum_inject(list)
+  total = 0
+  list.inject
 
-# 1. The following should return 165 instead of an error
-puts sum(list1)
+  list1 = [16,21,31,42,55]
 
-# 2. How would you refactor it using an enumerable method other than each?
-# Examples of enumerables: map, select, inject, reject, detect.
+  # 1. The following should return 165 instead of an error
+  puts sum(list1)
+
+  # 2. How would you refactor it using an enumerable method other than each?
+  # Examples of enumerables: map, select, inject, reject, detect.
