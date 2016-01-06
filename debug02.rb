@@ -1,4 +1,3 @@
-#refactor to use select and map and get rid of nils var
 def average(numbers = nil)
   return nil if numbers.nil? || numbers.length == 0
   filtered_numbers = numbers.compact
