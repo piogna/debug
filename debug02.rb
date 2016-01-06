@@ -1,15 +1,13 @@
+#refactor to use select and map and get rid of nils var
 def average(numbers = nil)
   return nil if numbers.nil? || numbers.length == 0
-  sum = 0
-  nils = 0
-  numbers.each do |num|
-    if num.nil?
-      nils += 1
-      next
-    end
+  filtered_numbers = numbers.compact
+  sum = filtered_numbers.inject do |sum, num|
     sum += num.to_i
   end
-  sum / (numbers.size - nils)
+
+  sum.to_f / filtered_numbers.length
+
 end
 
 ## TEST HELPER METHOD
